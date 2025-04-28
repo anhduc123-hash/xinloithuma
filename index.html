@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xin Lỗi Thư</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.pinimg.com/originals/4c/79/6e/4c796e02a406ad63e1f3fc9182c3f46f.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Courier New', Courier, monospace;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid orange;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation:
+        typing 4s steps(40, end),
+        blink-caret .75s step-end infinite;
+      font-size: 2em;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background: rgba(255, 165, 0, 0.8);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.5em;
+      animation: fadeIn 2s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/08/04/audio_28b0a0fb18.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="typewriter">Thư ơi, cho tớ xin lỗi nhé...</div>
+  <button onclick="showNextMessage()">Nhấn vào đây nè</button>
+
+  <div class="message" id="message1" style="display:none;">
+    Tớ thật sự xin lỗi vì đã làm cậu buồn 😔
+  </div>
+  <div class="message" id="message2" style="display:none;">
+    Tớ sẽ cố gắng thay đổi, để không làm Thư buồn nữa 💖
+  </div>
+  <div class="message" id="message3" style="display:none;">
+    Mong Thư tha thứ cho tớ nha... Chúng ta cùng vui vẻ lại nhé! 🥰
+  </div>
+
+  <script>
+    let currentMessage = 1;
+    function showNextMessage() {
+      let msg = document.getElementById('message' + currentMessage);
+      if (msg) {
+        msg.style.display = 'block';
+        currentMessage++;
+      }
+    }
+  </script>
+</body>
+</html>
